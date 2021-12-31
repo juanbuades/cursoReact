@@ -1,28 +1,15 @@
 import "./assets/css/App.css";
+import Router from "./Router";
 
-//importamos componente que hemos creado
+function App() {  
 
-import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import SeccionPruebas from "./components/SeccionPruebas";
-
-function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Slider></Slider>
+    
+
+        <Router />
       
-
-      <div className="center">
-
-        <SeccionPruebas></SeccionPruebas>
-        
-        <Sidebar></Sidebar>
-      <div className="clearfix"></div>  
-      </div>
-      <Footer></Footer>
+      
     </div>
   );
 }

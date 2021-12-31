@@ -4,6 +4,8 @@ import MiComponente from "./MiComponente";
 import Peliculas from "./Peliculas";
 
 class SeccionPruebas extends Component {
+
+    
   contador = 0;
 
   constructor(props) {
@@ -19,8 +21,8 @@ class SeccionPruebas extends Component {
     contador: 0,
   };*/
 
-  sumar() {
-    //this.contador = this.contador+1; Esto no funciona porque no se  accede a traves de state
+  sumar = (e) => {
+    //this.contador = this.contador+1; Esto no funciona porque no se accede a traves de state
     this.setState({
         /*Hay que llamar al metodo setState*/
       contador: this.state.contador + 1,
@@ -36,31 +38,37 @@ class SeccionPruebas extends Component {
   render() {
     return (
       <section id="content">
-        <h2 class="subheader">Últimos artículos</h2>
+        <h2 className="subheader">Últimos artículos</h2>
 
         <p>Primer proyecto en REACT</p>
 
-        <h2 class="subheader">Pruebas con componentes</h2>
+        <h2 className="subheader">Pruebas con componentes</h2>
 
         <section className="componentes">
           <MiComponente></MiComponente>
-          <Peliculas></Peliculas>
+          <MiComponente></MiComponente>
+          
         </section>
 
-        <h2 class="subheader">Pruebas de estados</h2>
+        <h2 className="subheader">Pruebas de estados</h2>
         <p>Contador: {this.state.contador}</p>
         <p>
           <input
             type="button"
             value="Sumar"
-            onClick={this.sumar.bind(this)}
+            onClick={this.sumar}
           ></input>
           <input
             type="button"
             value="Restar"
             onClick={this.restar.bind(this)}
+            /* se añade bind.(this) por la manera en 
+            la que hemos creado el metodo restar*/ 
           ></input>
         </p>
+        <h2 className="subheader">Prop (Propiedades)</h2>
+        <p>{this.props.textoProps}</p>
+
       </section>
     );
   }

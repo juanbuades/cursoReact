@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+
 
 class Header extends Component {
 
@@ -18,20 +20,21 @@ class Header extends Component {
                    
                     <nav id="menu">
                         <ul>
+                            {/**Importamos NavLink Para usarlo como etiqueta */}
                             <li>
-                                <a href="index.html">Inicio</a>
+                                <NavLink to="/home" activeClassName="active">Inicio</NavLink>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <NavLink to="/ruta-prueba" activeClassName="active">Blog</NavLink>
                             </li>
                             <li>
-                                <a href="formulario.html">Formulario</a>
+                                <NavLink to="/segunda-ruta" activeClassName="active">Formulario</NavLink>
                             </li>
                             <li>
-                                <a href="#">Pagina 1</a>
+                                <NavLink to="/pagina-1" activeClassName="active">Pagina 1</NavLink>
                             </li>
                             <li>
-                                <a href="#">Pagina 2</a>
+                                <NavLink to="/pruebas" activeClassName="active">Pagina 2</NavLink>
                             </li>                            
                         </ul>
                     </nav>
