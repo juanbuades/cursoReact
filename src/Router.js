@@ -6,25 +6,26 @@ import SeccionPruebas from "./components/SeccionPruebas";
 import Error from "./components/Error";
 
 import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Sidebar from "./components/Sidebar";
+import Blog from "./components/Blog";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Formulario from "./components/Formulario";
 
 class Router extends Component {
   render() {
     return (
-        
       /** ROUTES CON LA VERSION DE react-router-dom@5.3.0 */
       <BrowserRouter>
         <Header></Header>
-      <Slider></Slider>
-      
 
-      <div className="center"></div>
         {/* configurar rutas y paginas*/}
         <Switch>
-          <Route exact path="/" component={Peliculas} />
-          <Route exact path="/ruta-prueba" component={SeccionPruebas} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/formulario" component={Formulario} />
+          <Route exact path="/peliculas" component={Peliculas} />
+
           <Route exact path="/segunda-ruta" component={MiComponente} />
           <Route component={Error} />
           <Route
@@ -45,23 +46,22 @@ class Router extends Component {
               var nombre = props.match.params.nombre;
               var apellidos = props.match.params.apellidos;
               return (
-                 <React.Fragment> 
-                <div id="content">
-                  <h1 class="subheader">Página de pruebas</h1>
-                  <h2>{nombre}{apellidos}</h2>
-                </div>
+                <React.Fragment>
+                  <div id="content">
+                    <h1 class="subheader">Página de pruebas</h1>
+                    <h2>
+                      {nombre}
+                      {apellidos}
+                    </h2>
+                  </div>
                 </React.Fragment>
               );
             }}
           />
-        </Switch>{/*<SeccionPruebas textoProps = "Mensaje pasado como propiedad"></SeccionPruebas>*/}
-        <Sidebar></Sidebar>
-        {/*<Peliculas/>*/}
-        
-        
-      <div className="clearfix"></div>  
-      <Footer></Footer>
-        
+        </Switch>
+
+        <div className="clearfix"></div>
+        <Footer></Footer>
       </BrowserRouter>
 
       /**  ¡¡VERSIONES NUEVAS DE react-router-dom!!
